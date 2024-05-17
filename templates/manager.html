@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <style>
+		.col-md-12{
+            position:relative;
+            top: 50px;
+            height:100%;
+            text-align: left;
+			background: #edf765;
+		}
+        .card{
+            position:relative;
+            padding: 1px;
+			background: #ebf8f3;
+		}
+        .nav{
+            background-color: #e2ecf3;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            overflow: auto;
+        }
+        .nav-link{
+            display: block;
+            color: blue;
+        }
+        .nav-link:hover:not(.active){
+            background-color: #ffffff;
+            color: blue;
+        }
+        @media screen and (max-width:700px){
+            .nav{
+                height: auto;
+                position: relative;
+            }
+            .nav-link a {float:left;}
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="nav">
+            <h2>Grocery store App</h2>
+            <a class="nav-link"><router-link to="/manager/home">Home</router-link></a>
+            <a class="nav-link"><router-link to="/manager/items">Manage items</router-link></a>
+            <a class="nav-link"><router-link to="/manager/update">Update data</router-link></a>
+            <a class="nav-link"><router-link to="/manager/summary">Summary</router-link></a>
+            <a class="nav-link" href="{{url_for('signout')}}">Logout</a>
+        </div>
+        <div class="col-md-12">
+            <router-view></router-view>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://unpkg.com/vue-router@3.0.0/dist/vue-router.js"></script>
+<script type="module" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</html>

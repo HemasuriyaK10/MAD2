@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <style>
+		.col-md-12{
+            position:relative;
+            top: 50px;
+            height:100%;
+            text-align: left;
+			background: #edf765;
+		}
+        .nav{
+            background-color: #e2ecf3;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <h2>Grocery store App</h2>
+    </div>
+    <div class="col-md-12">
+            <p><h4>Items:</h4></p>
+            {% for n in d %}
+            <ul class="list-group">
+            <li class="list-group-item">{{n.Sno}} - {{n.item_name}} - {{n.qnty}} {{n.unit}} - Rs {{n.rate}} per unit - {{n.cat_id}} category</li>
+            </ul>
+            {%endfor%}
+    </div>
+</body>
+</html>
